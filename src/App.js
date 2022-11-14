@@ -79,6 +79,7 @@ function App() {
             handleChoise={handleChoise}
             flipped={card === choiseOne || card === choiseTwo || card.matched}
             disabled={disabled}
+            active={card === choiseOne || card === choiseTwo}
           />
         ))}
       </div>
