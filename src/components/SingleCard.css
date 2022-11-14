@@ -1,48 +1,47 @@
 .card {
-    position: relative;
-    width: 80px;
-    height: 104px;
-    border: 0.5px solid #CDCDCD;
-    border-radius: 8px;
-    transition: all linear .2s;
-    background: #FFFFFF;
-    font-family: 'Poppins';
-    font-size: 24px;
-    line-height: 36px;
-    color: #0A0A0C;
+  position: relative;
+  border: 0.5px solid #cdcdcd;
+  border-radius: 8px;
+  transition: all linear 0.2s;
+  background: #ffffff;
+  font-family: 'Poppins';
+  font-size: 24px;
+  line-height: 36px;
+  color: #0a0a0c;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.front, .back {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.front,
+.back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 }
 .back {
-    background-color: white;
-    transition: all ease-in 0.2s;
-    border-radius: 8px;
+  background-color: white;
+  transition: all ease-in 0.2s;
+  border-radius: 8px;
 }
 .card.flipped .back {
-    transform: rotateY(90deg);
-    border: 0.5px solid #ED5517;
-    border-radius: 8px;
-    overflow: hidden;
+  transform: rotateY(90deg);
+  border: 0.5px solid #ed5517;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .card.flipped .front {
-    border: 0.5px solid #ED5517;
-    border-radius: 8px;
-    transition-delay: 0.3s;
+  border: 0.5px solid #ed5517;
+  border-radius: 8px;
+  transition-delay: 0.3s;
 }
 .card:hover {
-    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.15));
-    cursor: pointer;
+  filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.15));
+  cursor: pointer;
 }
