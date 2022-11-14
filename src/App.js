@@ -1,21 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import SingleCard from './components/SingleCard';
-
-let numReserve = [];
-while (numReserve.length < 16) {
-  let randomNumber = Math.ceil(Math.random() * 60);
-  let found = false;
-  for (let i = 1; i < numReserve.length; i++) {
-    if (numReserve[i] === randomNumber) {
-      found = true;
-      break;
-    }
-  }
-  if (!found) {
-    numReserve[numReserve.length] = randomNumber;
-  }
-}
+import shuffledCards from './components/utils/shuffledCards';
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -24,12 +10,6 @@ function App() {
   const [disabled, setDisabled] = useState(false);
 
   const shuffleCards = () => {
-    const shuffledCards = [...numReserve, ...numReserve]
-      .sort(() => Math.random() - 0.5)
-      .map((card) => ({ card, id: Math.random(), matched: false }));
-
-    setChoiseOne(null);
-    setChoiseTwo(null);
     setCards(shuffledCards);
   };
 
