@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import './App.css';
+
 import SingleCard from './components/SingleCard';
-import shuffledCards from './components/utils/shuffledCards';
+import shuffledCards from './utils/shuffledCards';
 
 function App() {
   const [cards, setCards] = useState([]);
