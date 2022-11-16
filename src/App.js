@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import SingleCard from './components/SingleCard';
-import shuffledCards from './utils/shuffledCards';
+import { shuffledCards, primeNumbers } from './utils/shuffledCards';
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -10,7 +10,7 @@ function App() {
   const [disabled, setDisabled] = useState(false);
 
   const shuffleCards = () => {
-    setCards(shuffledCards);
+    setCards(shuffledCards(primeNumbers));
   };
 
   const handleChoise = (card) => {
