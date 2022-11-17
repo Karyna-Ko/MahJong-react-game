@@ -1,37 +1,24 @@
-function prime(n, flag) {
-  typeof flag === 'undefined' || flag === false
-    ? (flag = false)
-    : (flag = true);
+function getPrimes(num) {
+  const sieve = [];
+  const primes = [];
 
-  function isPrime(num) {
-    if (num === 0 || num === 1) {
-      return false;
-    }
-    for (var i = 2; i < num; i++) {
-      if (num % i === 0) {
-        return false;
+  for (let i = 2; i <= num; i++) {
+    if (!sieve[i]) {
+      primes.push(i);
+      for (let j = i * i; j <= num; j += i) {
+        sieve[j] = true;
       }
     }
-    return true;
   }
 
-  if (flag) {
-    var arr = [2];
-    for (var i = 3; i <= n; i += 2) {
-      if (isPrime(i)) {
-        arr.push(i);
-      }
-    }
-    return arr;
-  } else {
-    return isPrime(n);
-  }
+  return primes;
 }
 
-export const primeNumbers = [...prime(53, true), ...prime(53, true)];
+export const primeNumbers = [...getPrimes(53)];
 
 export const shuffledCards = (arr) => {
   return arr
+    .concat(arr)
     .sort(() => Math.random() - 0.5)
     .map((card) => ({ card, id: Math.random(), matched: false }));
 };
