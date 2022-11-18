@@ -1,48 +1,57 @@
+:root {
+  --color-black: #0a0a0c;
+  --color-orange: #ed5517;
+  --color-grey: #cdcdcd;
+  --color-white: #ffffff;
+}
+
 .card {
-    position: relative;
-    width: 80px;
-    height: 104px;
-    border: 0.5px solid #CDCDCD;
-    border-radius: 8px;
-    transition: all linear .2s;
-    background: #FFFFFF;
-    font-family: 'Poppins';
-    font-size: 24px;
-    line-height: 36px;
-    color: #0A0A0C;
+  border: 0.5px solid var(--color-grey);
+  border-radius: 8px;
+  transition: all linear 0.2s;
+  background: var(--color-white);
+  font-family: 'Poppins';
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--color-black);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.front, .back {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
+.card.flipped.active {
+  border: 0.5px solid var(--color-orange);
 }
-.back {
-    background-color: white;
-    transition: all ease-in 0.2s;
-    border-radius: 8px;
+.card.flipped {
+  border: 1px solid var(--color-black);
 }
-.card.flipped .back {
-    transform: rotateY(90deg);
-    border: 0.5px solid #ED5517;
-    border-radius: 8px;
-    overflow: hidden;
-}
-.card.flipped .front {
-    border: 0.5px solid #ED5517;
-    border-radius: 8px;
-    transition-delay: 0.3s;
-}
+
 .card:hover {
-    filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.15));
-    cursor: pointer;
+  filter: drop-shadow(2px 4px 8px rgba(0, 0, 0, 0.15));
+  cursor: pointer;
+}
+
+.num {
+  opacity: 0;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 36px;
+  color: var(--color-black);
+  margin: 0;
+  animation: 5s hideNum linear;
+}
+
+.card.flipped .num {
+  opacity: 1;
+}
+
+@keyframes hideNum {
+  0%,
+  84% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0;
+  }
 }
