@@ -1,3 +1,4 @@
+import { IPropsSingleCard } from '../utils/interfaces';
 import './SingleCard.css';
 
 export default function SingleCard({
@@ -6,7 +7,7 @@ export default function SingleCard({
   flipped,
   disabled,
   active,
-}) {
+}: IPropsSingleCard) {
   const handleClick = () => {
     if (!disabled && !flipped) {
       handleChoise(card);

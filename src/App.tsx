@@ -1,19 +1,20 @@
 import { useEffect, useState } from 'react';
 
 import SingleCard from './components/SingleCard';
+import { IPropsCard } from './utils/interfaces';
 import { shuffledCards, primeNumbers } from './utils/shuffledCards';
 
 function App() {
-  const [cards, setCards] = useState([]);
-  const [choiseOne, setChoiseOne] = useState(null);
-  const [choiseTwo, setChoiseTwo] = useState(null);
+  const [cards, setCards] = useState<IPropsCard[]>([]);
+  const [choiseOne, setChoiseOne] = useState<IPropsCard | null>(null);
+  const [choiseTwo, setChoiseTwo] = useState<IPropsCard | null>(null);
   const [disabled, setDisabled] = useState(false);
 
   const shuffleCards = () => {
     setCards(shuffledCards(primeNumbers));
   };
 
-  const handleChoise = (card) => {
+  const handleChoise = (card: IPropsCard) => {
     choiseOne ? setChoiseTwo(card) : setChoiseOne(card);
   };
 

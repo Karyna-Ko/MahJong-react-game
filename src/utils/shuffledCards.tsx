@@ -1,6 +1,6 @@
-function getPrimes(num) {
+function getPrimes(num: number): number[] {
   const sieve = [];
-  const primes = [];
+  const primes: number[] = [];
 
   for (let i = 2; i <= num; i++) {
     if (!sieve[i]) {
@@ -10,13 +10,12 @@ function getPrimes(num) {
       }
     }
   }
-
   return primes;
 }
 
-export const primeNumbers = [...getPrimes(53)];
+export const primeNumbers: number[] = [...getPrimes(53)];
 
-export const shuffledCards = (arr) => {
+export const shuffledCards = (arr: number[]) => {
   return arr
     .concat(arr)
     .sort(() => Math.random() - 0.5)
